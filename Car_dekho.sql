@@ -47,5 +47,27 @@ select count(*)from car_dekho where year between 2015 and 2023;
 
 -- all cars details between 2015 and 2023--
 select *from car_dekho where year between 2015 and 2023;
+select *from car_dekho;
+
+-- cars count year 2015 or 2014--
+select count(*)from car_dekho where year =2015 or 2014;
+
+-- need to find the car maruti alto and maruti lxi--
+select *from car_dekho where name in (' Maruti Alto 800 LXI Opt',' Maruti S-Presso LXi');
+select count(*)from car_dekho where name in (' Maruti Alto 800 LXI Opt',' Maruti S-Presso LXi'); #3
+
+-- need to find the cars except maruti alto and maruti lxi--
+select *from car_dekho where name not in (' Maruti Alto 800 LXI Opt',' Maruti S-Presso LXi');
+select count(*)from car_dekho where name not in (' Maruti Alto 800 LXI Opt',' Maruti S-Presso LXi'); #7924
+
+
+-- number of cars of maruti --
+select *from car_dekho where name like 'maruti%';
+select count(*)from car_dekho where name like 'maruti%';
+
+-- Details of car by name and price--
+select name,concat('Rs',selling_price) from car_dekho;
+select name,concat('Rs',format(selling_price,0)) from car_dekho;
+
 
 -- End --
